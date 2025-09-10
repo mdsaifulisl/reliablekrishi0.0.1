@@ -1,0 +1,254 @@
+:root {
+  --primary-green: #4caf50;
+  --earth-brown: #8d6e63;
+  --sun-yellow: #fbc02d;
+  --sky-blue: #03a9f4;
+  --light-beige: #faf3e0;
+  --text-color: #333333;
+  --text-light: #ffffff;
+}
+
+/* All Top Heading Styles */
+
+.all-headings {
+  background-image: url("/image/slider1.jpg");
+}
+
+.contact_heading{
+  height: 500px;
+  width: 100%;
+  position: relative;
+}
+.contact_heading iframe{
+  height: 100%;
+  width: 100%;
+}
+
+/* contact form styles */
+.contact-section {
+  background-color: var(--light-beige);
+  padding: 60px 20px;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.contact-form-box,
+.contact-info-box {
+  flex: 1 1 300px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+.section-title {
+  color: var(--primary-green);
+  font-size: 24px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.contact-form .form-group {
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: var(--earth-brown);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.button-earth {
+  background-color: var(--earth-brown);
+  color: var(--text-light);
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-earth:hover {
+  background-color: #5d4037;
+}
+
+.contact-info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.contact-info-list li {
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: var(--text-color);
+}
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.social-icon {
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.facebook, .whatsapp, .youtube {
+ color: var(--text-color);
+ border: 1px solid var(--text-color);
+}
+.facebook:hover, .whatsapp:hover, .youtube:hover {
+ background-color: var(--text-color);
+ color: var(--text-light);
+}
+
+.facebook img, .whatsapp img, .youtube img {
+ margin-right: 5px;
+}
+
+.disease-section {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.disease-slider-wrapper {
+  position: relative;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 10px;
+}
+.disease-slider-wrapper::-webkit-scrollbar {
+  display: none;
+}
+.disease-slider {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  padding-bottom: 10px;
+}
+
+.disease-item {
+  flex: 0 0 auto;
+  width: 260px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  scroll-snap-align: start;
+  transition: transform 0.3s ease;
+}
+
+.disease-item-inner {
+  padding: 15px;
+}
+
+.disease-item-img {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.disease-item-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.disease-item:hover .disease-item-img img {
+  transform: scale(1.05);
+}
+
+.disease-item-content {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.disease-item-content h3 {
+  font-size: 18px;
+  color: #333;
+}
+
+.disease-item-content p {
+  font-size: 14px;
+  color: #666;
+}
+
+.button-earth {
+  display: inline-block;
+  background-color: #28a745;
+  color: white;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.button-earth:hover {
+  background-color: #218838;
+}
+
+.slider-controls {
+  text-align: center;
+  margin-top: 15px;
+  display: none;
+  justify-content: center;
+  gap: 10px;
+}
+
+.slider-controls.show-on-desktop {
+  display: flex;
+}
+
+.slider-controls button {
+  padding: 8px 12px;
+  margin: 0 5px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.slider-controls button:hover {
+  background-color: #555;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+  }
+
+  /* -------- */
+  .slider-controls {
+    display: flex !important;
+  }
+}

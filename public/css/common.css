@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --primary-green: #4CAF50;
+  --earth-brown: #8D6E63;
+  --sun-yellow: #FBC02D;
+  --sky-blue: #03A9F4;
+  --light-beige: #FAF3E0;
+  --text-color: #333333;
+  --red-color: rgb(219, 70, 70);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Hind Siliguri', 'Roboto', sans-serif;
+  color: var(--text-color);
+}
+ 
+.fontal{
+  font-family: "fontal", sans-serif !important;
+}
+
+
+body {
+  background-color: var(--light-beige);
+  color: var(--text-color);
+  scroll-behavior: smooth;
+  font-family: 'Hind Siliguri', 'Roboto', sans-serif;
+}
+
+.button-sky {
+  background-color: var(--sky-blue);
+  color: var(--light-beige);
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-sky:hover {
+  background-color: #0288d1; /* slightly darker sky blue */
+}
+ 
+.button-earth {
+  background-color: var(--earth-brown);
+  color: var(--light-beige);
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-earth:hover {
+  background-color: #5d4037; /* darker brown */
+}
+
+.button-sun {
+  background-color: var(--sun-yellow);
+  color: var(--light-beige);
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.button-sun:hover {
+  background-color: #f4a261; /* lighter yellow */
+}
+
+.button-red {
+  background-color: var(--red-color);
+  color: var(--light-beige);
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add_btn{
+  background-color: #82b6d1;
+  color: var(--light-beige);
+  border: none;
+  padding: 8px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.add_btn:hover {
+  background-color: #5d4037; /* darker brown */
+}
+
+ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1, .heading {
+  font-size: 70px;
+  font-weight: 600;
+}
+
+h2{
+  font-size: 50px;
+  font-weight: 600;
+}
+
+h3{ 
+  font-size: 24px;
+  font-weight: bold;
+}
+
+p{
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+}
+.p{
+  font-size: 18px!important;
+}
+
+.pp{
+  font-size: 22px!important;
+}
+
+
+a{
+  font-size: 18px!important;
+  text-decoration: none;
+  transition: 0.5s;
+}
+.a{
+  font-size: 20px!important;
+}
+.bold{
+  font-weight: bold;
+}
+
+
+
+
+@media (max-width: 1320px) {
+
+}
+@media (max-width: 1140px) {
+  h1, 
+  h1, .heading {
+    font-size: 55px;
+  }
+
+  h2{
+    font-size: 40px;
+  }
+}
+@media (max-width: 960px) {
+  p{
+    font-size: 18px;
+  }
+  .p{
+    font-size: 16px!important;
+  }
+
+  a{
+    font-size: 16px !important;
+  }
+  .a{
+    font-size: 18px!important;
+  }
+  
+}
+@media (max-width: 768px) {
+  h1, 
+  h1, .heading {
+    font-size: 40px;
+    font-weight: 500;
+  }
+  h2{
+    font-size: 30px;
+  }
+
+  
+}
+@media (max-width: 540px) {
+}
+
+/* ----------------- */
+
+/* 
+
+@media (max-width: 1320px) {
+}
+@media (max-width: 1140px) {
+}
+@media (max-width: 960px) {
+}
+@media (max-width: 768px) {
+}
+@media (max-width: 540px) {
+}
+
+*/
+

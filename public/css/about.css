@@ -1,0 +1,68 @@
+:root {
+  --primary-green: #4CAF50;
+  --earth-brown: #8D6E63;
+  --sun-yellow: #FBC02D;
+  --sky-blue: #03A9F4;
+  --light-beige: #FAF3E0;
+}
+
+mark{
+  background-color: #98d2ec;
+}
+
+.all-headings{
+  background-image: url('../image/slider2.jpg');
+}
+
+/* Section Base */
+.about-section {
+  background-color: var(--light-beige);
+  padding: 60px 20px;
+  padding-bottom: 20px!important;
+}
+
+h2, h3 {
+  color: var(--primary-green);
+  font-weight: 700;
+}
+
+.pp {
+  color: var(--text-color);
+  font-size: 16px;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.button-earth {
+  background-color: var(--earth-brown);
+  color: var(--text-light);
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.button-earth:hover {
+  background-color: #5d4037;
+}
+
+.cv span{
+  color: var(--light-beige);
+}
+.about-btn{
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .about-section img {
+    max-width: 80%;
+    margin-bottom: 20px;
+  }
+}
+
+

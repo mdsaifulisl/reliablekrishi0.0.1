@@ -1,0 +1,46 @@
+
+
+
+.all-headings{
+  background-image: url('../image/slider3.png');
+}
+
+
+
+/* disease start */
+.technology-btn{
+  width: 60%;
+  align-items: center;
+}
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.disease-item-inner{
+  width: 100%;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease-in-out;
+  padding: 20px;
+  padding-bottom: 25px;
+  height: 100%;
+}
+.disease-item-inner .disease-item-img{
+  width: 100%;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+.disease-item-inner .disease-item-img img{
+  width: 100%;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+.disease-item-inner:hover .disease-item-img img{
+  transform: scale(1.05);
+}
+/* disease end */

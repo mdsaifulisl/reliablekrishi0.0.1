@@ -1,0 +1,85 @@
+:root {
+  --primary-green: #4CAF50;
+  --earth-brown: #8D6E63;
+  --sun-yellow: #FBC02D;
+  --sky-blue: #03A9F4;
+  --light-beige: #FAF3E0;
+  --text-color: #333333;
+  --text-light: #ffffff;
+}
+
+.login-section {
+  background-color: var(--light-beige);
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-box {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.login-box h2 {
+  margin-bottom: 25px;
+  color: var(--primary-green);
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: var(--earth-brown);
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.button-sky {
+  background-color: var(--sky-blue);
+  color: var(--text-light);
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-sky:hover {
+  background-color: #0288d1;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.text-helper {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.text-helper a {
+  color: var(--primary-green);
+  text-decoration: none;
+}
+
+.text-helper a:hover {
+  text-decoration: underline;
+}

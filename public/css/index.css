@@ -1,0 +1,355 @@
+:root {
+  --primary-green: #4CAF50;
+  --earth-brown: #8D6E63;
+  --sun-yellow: #FBC02D;
+  --sky-blue: #03A9F4;
+  --light-beige: #FAF3E0;
+  --text-color: #333333;
+}
+/* Slider start */
+.slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 550px;
+}
+
+.slides {
+  width: calc(100% * (number_of_slides + 2));
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+.slides.smooth-transition {
+  transition: transform 0.5s ease-in-out;
+}
+.slide {
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+  flex: 0 0 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide .img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.slide .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slide-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+
+.slide-content h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.slide-content p {
+  font-size: 18px;
+  margin-bottom: 25px;
+  color: white;
+}
+
+.slide-content .btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  border: 1px solid white;
+  transition: all 0.3s ease;
+}
+
+.slide-content .btn:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #000;
+}
+
+.dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 3;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255,255,255,0.5);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.dot.active {
+  background-color: white;
+}
+
+/* technology start */
+
+.technology-card {
+  background-color: white;
+  transition: transform 0.3s ease;
+}
+
+.technology-card:hover {
+  transform: translateY(-4px);
+}
+
+.technology-text {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.button-sky {
+  background-color: #00aaff;
+  color: white;
+  padding: 8px 16px; 
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.button-sky:hover {
+  background-color: #0088cc;
+}
+
+.technology-heading a{
+  font-size: 20px;
+  font-weight: 600;
+  padding: 10px;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  color: var(--text-color);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+.technology-heading a:hover{
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+}
+/* technology end */
+
+/* disease start */
+.disease-item-inner{
+  width: 100%;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease-in-out;
+  padding: 20px;
+  padding-bottom: 25px;
+  height: 100%;
+}
+.disease-item-inner .disease-item-img{
+  width: 100%;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+.disease-item-inner .disease-item-img img{
+  width: 100%;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+.disease-item-inner:hover .disease-item-img img{
+  transform: scale(1.05);
+}
+/* disease end */
+
+/* farmer start */
+
+.farmer {
+  padding: 60px 0;
+  background-color: #f9f9f9;
+}
+
+.farmer .farmer-img {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+}
+.farmer .farmer-img1 {
+  background-image: url('/image/farmer.jpg');
+}
+.farmer .farmer-img2 {
+  background-image: url('/image/farmer6.jpg');
+}
+
+.farmer .farmer-img .farmer-con1{
+  position: absolute;
+  left: 2rem;
+  bottom: 2rem;
+  height: 300px;
+  width: 50%;
+  z-index: 1;
+}
+.farmer .farmer-img .farmer-con1 img,
+.farmer .farmer-img .farmer-con2 img{
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  transition: all 0.5s ease-in-out;
+}
+.farmer .farmer-img .farmer-con2{
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  height: 300px;
+  width: 50%;
+  z-index: 2;
+}
+
+.farmer-img:hover .farmer1,
+.farmer-img:hover .farmer2 {
+  transform: scale(1.05);
+}
+/* farmer end */
+
+/* blog start */
+
+.blog-card {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  background-color: #fff;
+  justify-content: center;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.blog-card:hover {
+  transform: scale(1.01);
+}
+
+.blog-img {
+  
+  width: 40%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.blog-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+
+.blog-con {
+  flex: 1;
+  padding: 15px 20px;
+}
+
+.blog-con h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0 0 10px;
+}
+
+.blog-con p.blog-text {
+  font-size: 0.95rem;
+  color: #444;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.blog .blog-card .blog-con p a{
+  font-family: "fontal", sans-serif;;
+
+}
+/* Blog End */
+@media (max-width: 768px) {
+  .slider {
+    height: 400px;
+  }
+  
+  /* Technology */
+ .technology-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .technology-text {
+    font-size: 0.9rem;
+  }
+
+  /* farmer */
+  .farmer .farmer-img {
+    height: 400px;
+  }
+  .farmer .farmer-img .farmer-con1,
+  .farmer .farmer-img .farmer-con2{
+    height: 200px;
+  }
+
+  /* blog */
+  .blog-img{
+    padding: 0 15px;
+  }
+  .blog-card {
+    padding: 15px 0;
+    flex-direction: column;
+  }
+
+  .blog-img {
+    width: 100%;
+    height: 200px;
+    border-radius: 0;
+  }
+
+  .blog-img img {
+    border-radius: 0;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .slider {
+    height: 300px;
+  }
+
+    /* farmer */
+  .farmer .farmer-img {
+    height: 300px;
+  }
+  .farmer .farmer-img .farmer-con1,
+  .farmer .farmer-img .farmer-con2{
+    height: 150px;
+  }
+  
+}
