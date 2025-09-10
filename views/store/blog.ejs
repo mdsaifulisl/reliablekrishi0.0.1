@@ -1,0 +1,150 @@
+<%- include("../partials/head.ejs") %>
+<link rel="stylesheet" href="/css/blog.css">
+</head>
+<body>
+  <!-- Header -->
+   <%- include("../partials/header.ejs") %>
+
+  <!-- All Top Heading  --> 
+  <div class="all-headings mb-4">
+    <h1>কৃষি <span>ব্লগ</span></h1>
+    <div class="search mt-3">
+      <input id="blogSearch" type="search" placeholder="সার্চ করুন..." id="search-input">
+      <div class="search_btn">
+        <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+    </div>
+  </div>
+  <!-- All Top Heading  end-->
+
+  <!-- Blog start -->
+  <section class="blog pb-5 mt-4">
+    <div class="container">
+      <div class="technology-heading d-flex flex-column  gap-2 mb-lg-3 mb-md-3">
+        <% if(isLoggedIn) { %>
+          <div class="technology-btn mb-4">
+            <a class="add_btn" href="/add-blog"> + Add new Blog</a>
+          </div>
+        <% } %>
+        <h2>ব্লগ</h2>
+      </div>
+ 
+      <div class="row g-4 mt-2 blog-list-container">
+        
+        <% if (rows.length > 0) { %>
+          <% rows.forEach(function(blog) { %>
+            <div class="col-12 blog-item">
+              <div class="blog-card">
+                <div class="blog-img">
+                  <img src="<%= blog.image %>" alt="">
+                </div>
+
+                <div class="blog-con">
+                  <h3><%= blog.title %></h3>
+                  <div class="blog-text" data-id="<%= blog.id %>">
+                    <%- blog.description %>
+                  </div>
+
+                  <% if (isLoggedIn){%>
+                    <div class="blog-btns">
+                      <div>
+                        <a href="/blog/edit/<%= blog.id %>" class="edit"><i class="fa-solid fa-pen-to-square"> </i> Edit</a>
+                      </div>
+                      <form action="/blog/delete/<%= blog.id %>" method="POST" style="display:inline;" onsubmit="return confirm('Are you sure you want to delete this?');">
+                        <button type="submit" class="delete"><i class="fa-solid fa-trash"></i> Delete</button>
+                      </form> 
+                    </div>
+                  <% } %>
+                </div>
+             </div>
+            </div>
+          <% }) %>
+        <% } else { %>
+          <h6>কোন ব্লগ যোগ করা হয়নি</h6>
+        <% } %>
+      </div>
+    </div>
+  </section>
+  <!-- Blog End -->
+
+  <!--Footer-->
+   <%- include("../partials/footer.ejs") %>
+
+  <!-- JS -->
+ <script src="/js/header.js"></script>
+ <script>
+    const searchInput = document.getElementById('blogSearch');
+    const blogItems = document.querySelectorAll('.blog-item');
+    const blogContainer = document.querySelector('.blog-list-container');
+
+    // warning message তৈরি
+    let noResultMessage = document.createElement('p');
+    noResultMessage.textContent = '';
+    noResultMessage.classList.add('text-center', 'text-danger', 'mt-3');
+    noResultMessage.style.display = 'none';
+    blogContainer.parentElement.insertBefore(noResultMessage, blogContainer);
+
+    // 🔍 Search Function
+    searchInput.addEventListener('input', () => {
+      const searchValue = searchInput.value.toLowerCase();
+      let matched = false;
+
+      blogItems.forEach((item) => {
+        const title = item.querySelector('.blog-card h3')?.textContent.toLowerCase() || '';
+        const content = item.querySelector('.blog-text')?.textContent.toLowerCase() || '';
+
+        if (title.includes(searchValue) || content.includes(searchValue)) {
+          item.style.display = 'block';
+          matched = true;
+        } else {
+          item.style.display = 'none';
+        }
+      });
+
+      if (!matched) {
+        blogItems.forEach(item => item.style.display = 'block');
+        noResultMessage.textContent = '🔍 কোনো ফলাফল পাওয়া যায়নি';
+        noResultMessage.style.display = 'block';
+      } else {
+        noResultMessage.style.display = 'none';
+      }
+    });
+
+    // ✂️ Truncate description with "Read More"
+    
+
+    const containers = document.querySelectorAll('.blog-text');
+
+containers.forEach(container => {
+  const maxLength = 450; 
+  let totalText = '';
+
+  const paragraphs = Array.from(container.querySelectorAll('p'));
+  paragraphs.forEach(p => totalText += p.textContent.trim() + ' ');
+
+  let truncatedText = totalText.trim().substring(0, maxLength);
+
+  container.innerHTML = '';
+
+  const newP = document.createElement('p');
+  newP.textContent = truncatedText;
+
+
+  if (totalText.length > maxLength) {
+    newP.textContent += '... ';
+
+    const id = container.getAttribute('data-id');
+    const readMoreLink = document.createElement('a');
+    readMoreLink.href = `/blog/${id}`;
+    readMoreLink.textContent = 'more';
+    readMoreLink.classList.add('read-more');
+
+    newP.appendChild(readMoreLink);
+  }
+  container.appendChild(newP);
+});
+
+
+ </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<%- include("../partials/head.ejs") %>
+<link rel="stylesheet" href="/css/contact.css">
+</head>
+<body>
+  <!-- Header -->
+  <%- include("../partials/header.ejs") %>
+
+  <!-- All Top Heading  -->
+  <div class="all-headings mb-4">
+    <h1 class="fontal">যোগাযোগ করুন</h1>
+  </div>
+  <!-- All Top Heading  end-->
+
+  <% if(isLoggedIn) { %>
+  <div class="contact_form container mt-5">
+    <a class="add_btn" href="/contact-form">Contact form</a>
+  </div>
+  <% } %>
+
+
+
+  <!-- Contact Section -->
+  <section class="contact-section py-5" id="contact">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Left: Contact Form -->
+        <div class="col-md-6">
+          <div class="p-4 bg-white rounded shadow-sm h-100">
+            <h2 class="section-title text-center mb-4">যোগাযোগের তথ্য</h2>
+            <ul class="list-unstyled mb-4">
+              <li class="mb-2 fontal"><strong>মোবাইল:</strong> +880 1603441696</li>
+              <li class="mb-2 fontal"><strong>ইমেইল:</strong>mdo342412@gmail.com</li>
+              <li class="mb-2 fontal"><strong>ঠিকানা:</strong> উচিৎপুরা, আড়াইহাজার, নারায়ণগঞ্জ</li>
+            </ul>
+
+            <div class="d-flex flex-wrap gap-2 justify-content-start">
+              <a href="https://www.facebook.com/share/1FkfCKPpGr/" class="btn social-icon facebook fontal"><img src="/logo/facebook.svg" alt="Facebook" width="24">Facebook</a>
+              <a href="https://wa.me/8801883135933" class="btn social-icon whatsapp fontal"><img src="/logo/whatsapp.svg" alt="WhatsApp" width="24">WhatsApp</a>
+              <a href="https://www.youtube.com/@reliablekrishi" class="btn social-icon youtube fontal"><img src="/logo/youtube.svg" alt="YouTube" width="24">YouTube</a>
+            </div>
+          </div>
+        </div> 
+
+         <!-- Right: Contact Info -->
+        <div class="col-md-6">
+          <div class="p-4 bg-white rounded shadow-sm h-100">
+            <h2 class="section-title text-center mb-4">যোগাযোগ ফর্ম</h2>
+            <form action="/contact" method="POST" class="contact-form">
+              <div class="mb-3">
+                <label for="name" class="form-label">নাম <span class="text-danger">*</span></label>
+                <input type="text" class="form-control fontal" id="name" name="name" required>
+              </div>
+
+              <div class="mb-3">
+                <label for="email" class="form-label">ইমেইল</label>
+                <input type="email" class="form-control fontal" id="email" name="email">
+              </div>
+
+              <div class="mb-3">
+                <label for="phone" class="form-label">মোবাইল <span class="text-danger">*</span></label>
+                <input type="number" class="form-control fontal" id="phone" name="number" required>
+              </div>
+
+              <div class="mb-3">
+                <label for="message" class="form-label">বার্তা <span class="text-danger">*</span></label>
+                <textarea class="form-control fontal" id="message" name="message" rows="4" required></textarea>
+              </div>
+
+              <button type="submit" class="btn button-earth w-100">বার্তা পাঠান</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Contact Section End -->
+
+
+  <!-- location -->
+    <div class="contact_heading container mb-5">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4493.4821608880475!2d90.6936332!3d23.752876900000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37544900674841d7%3A0x7038621de733b752!2z4Kau4KeH4Ka44Ka-4Kaw4KeN4Ka4IOCmk-CmuOCmruCmvuCmqCDgpo_gpqjgp43gpp_gpr7gprDgpqrgp43gprDgpr7gpofgppw!5e1!3m2!1sen!2sbd!4v1757328125763!5m2!1sen!2sbd" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  <!-- location End -->
+
+ 
+  
+  <!--Footer-->
+   <%- include("../partials/footer.ejs") %>
+  <!-- JS -->
+ <script src="/js/header.js"></script>
+</body>
+</html>
+
+

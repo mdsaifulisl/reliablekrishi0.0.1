@@ -1,0 +1,89 @@
+<%- include("../partials/head.ejs") %>
+</head>
+<body>
+  <!-- Header -->
+   <%- include("../partials/header.ejs") %>
+
+  <div class="container py-5" style="max-width: 900px;">
+    <h2 class="text-center mb-4 fw-bold text-success">ব্লগ আপডেট করুন</h2>
+
+    <form action="/blog/edit/<%= blog.id %>" method="POST" enctype="multipart/form-data" class="shadow p-4 rounded bg-light">
+
+      <!-- Title -->
+      <div class="mb-3">
+        <label for="title" class="form-label fw-semibold">ব্লগের শিরোনাম <span class="text-danger">*</span></label>
+        <input 
+          type="text" 
+          name="title" 
+          id="title" 
+          class="form-control" 
+          placeholder="শিরোনাম লিখুন" 
+          value="<%= blog.title %>" 
+          required>
+      </div>
+
+      <!-- Blog type -->
+      <div class="mb-3">
+        <label for="type" class="form-label fw-semibold">ব্লগের প্রকার <span class="text-danger">*</span></label>
+        <select name="type" id="type" class="form-control" required>
+          <option value="blog" <%= blog.type === 'blog' ? 'selected' : '' %>>ব্লগ</option>
+          <option value="disease" <%= blog.type === 'disease' ? 'selected' : '' %>>রোগবালাই</option>
+          <option value="technology" <%= blog.type === 'technology' ? 'selected' : '' %>>প্রযুক্তি</option>
+        </select>
+      </div>
+
+      <!-- Cover Image -->
+      <div class="mb-3">
+        <label for="image" class="form-label fw-semibold">কভার ছবি</label>
+        
+        <% if (blog.image) { %>
+          <div class="mb-2">
+            <img src="<%= blog.image %>" alt="Current Image" style="max-height: 150px; border: 1px solid #ddd; padding: 4px;">
+          </div>
+        <% } %>
+        
+        <input 
+          type="file" 
+          name="image" 
+          id="image" 
+          class="form-control" 
+          accept=".jpg, .jpeg, .png">
+        <small class="text-muted">নতুন ছবি আপলোড করলে পুরাতন ছবিটি প্রতিস্থাপিত হবে</small>
+      </div>
+
+      <!-- Description -->
+      <div class="mb-3">
+        <label for="description" class="form-label fw-semibold">ব্লগের বর্ণনা <span class="text-danger">*</span></label>
+        <textarea 
+          name="description" 
+          id="description" 
+          class="form-control" 
+          rows="10"><%- blog.description %></textarea>
+      </div>
+
+      <!-- Submit -->
+      <div class="text-center">
+        <button type="submit" class="btn btn-success px-4">✅ ব্লগ আপডেট করুন</button>
+      </div>
+    </form>
+  </div>
+
+  <!--Footer-->
+  <%- include("../partials/footer.ejs") %>
+
+  <!-- CKEditor -->
+  <script src="https://cdn.ckeditor.com/ckeditor5/39.0.2/classic/ckeditor.js"></script>
+  <script>
+    ClassicEditor.create(document.querySelector('#description'), {
+      toolbar: [
+        'heading','|',
+        'bold','italic','link',
+        'bulletedList','numberedList','|',
+        'insertTable','uploadImage','undo','redo'
+      ],
+      ckfinder: { uploadUrl: '/blog/upload-image' },
+      table: { contentToolbar: ['tableColumn','tableRow','mergeTableCells'] }
+    }).catch(error => { console.error(error); });
+  </script>
+</body>
+</html>

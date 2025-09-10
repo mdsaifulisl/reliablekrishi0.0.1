@@ -1,0 +1,82 @@
+<%- include("../partials/head.ejs") %>
+
+<style>
+  .detail {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .detail .blog_img img{
+    width: 100%;
+    border-radius: 10px;
+  }
+  .title_detail p{
+    text-align: justify;
+  }
+
+  .contant_description img{
+    width: 50%;
+    border-radius: 10px;
+  }
+  /* table start */
+
+  .contant_description table {
+    width: 100%;
+    border-collapse: collapse; 
+    background-color: transparent !important;
+  }
+
+  .contant_description table,
+  .contant_description table th,
+  .contant_description table td {
+    border: 1px solid #ccc; 
+    background-color: transparent !important;
+  }
+
+  .contant_description table th,
+  .contant_description table td {
+    padding: 10px;
+    text-align: center;
+  }
+
+  /* table end */
+  
+  @media (max-width: 768px) {
+    .contant_description img{
+      width: 100%;
+    }
+    .contant_description table{
+      width: 100%;
+    }    
+  }
+
+</style>
+</head>
+<body>
+  <!-- Header -->
+   <%- include("../partials/header.ejs") %>
+
+
+   <div class="container py-5">
+
+    <div class="detail">
+      <div class="blog_img pb-4">
+        <% if (blog.image){ %>
+          <img src="<%= blog.image %>" alt="">
+        <% } %>
+      </div>
+
+      <div class="title_detail mt-4">
+        <h3 class="mb-4"><%= blog.title %></h3>
+        <div class="contant_description"><%- blog.description %></div>
+
+      </div>
+    </div>
+   </div>
+  
+  <!--Footer-->
+   <%- include("../partials/footer.ejs") %> 
+  <!-- JS -->
+ <script src="/js/header.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+
+<%- include("../partials/head.ejs") %>
+<link rel="stylesheet" href="/css/login.css">
+
+</head>
+<body>
+  <!-- Header -->
+   <%- include("../partials/header.ejs") %>
+
+
+
+  <!-- login -->
+
+    <section class="login-section">
+    <div class="login-box">
+      <h3>লগইন করুন</h3>
+      <p class="text-danger p mb-4"><%= error %></p>
+      <form action="/login" method="POST">
+        <div class="form-group">
+          <label for="email">ইমেইল বা মোবাইল</label>
+          <input type="text" id="email" name="email" class="fontal" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">পাসওয়ার্ড</label>
+          <input type="password" id="password" name="password" class="fontal" required>
+        </div>
+
+        <button type="submit" class="button-sky w-100">লগইন</button>
+        
+      </form>
+    </div>
+  </section>
+  <!-- login end -->
+  
+  <!--Footer-->
+   <%- include("../partials/footer.ejs") %>
+  <!-- JS -->
+ <script src="/js/header.js"></script>
+</body>
+</html>

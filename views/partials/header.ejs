@@ -1,0 +1,45 @@
+<div class="header container-fluid">
+    <div class="container">
+      <header>
+        <div class="logo"> <a href="/"> <img src="/logo/logo.png" alt="Logo"> </a></div>
+      
+        <nav class="nav-links">
+
+          <ul>
+
+            <li><a class="<%= path === '/' ? 'active' : '' %>" href="/">হোম</a></li>
+
+            <li><a class="<%= path === '/blog' ? 'active' : '' %>" href="/blog">ব্লগ</a></li>
+
+            <li><a class="<%= path === '/disease' ? 'active' : '' %>" href="/disease">পোকামাকর/রোগ</a></li>
+
+            <li><a class="<%= path === '/technology' ? 'active' : '' %>" href="/technology">প্রযুক্তি</a></li>
+
+            <li><a class="<%= path === '/about' ? 'active' : '' %>" href="/about">পরিচিতি</a></li>
+
+            <li><a class="<%= path === '/contact' ? 'active' : '' %>" href="/contact">যোগাযোগ</a></li>
+
+
+            <% if(isLoggedIn) { %>
+              <li><a href="/logout" class="logout-nav fontal">Logout</a></li>
+            <% } else { %>
+              <li class="ul-user"><a href="/login"><img src="/logo/user.svg" alt="User Icon"></a></li>
+            <% } %>
+            
+          </ul>
+          
+        </nav>
+
+        <div class="nav-user">
+          <% if(!isLoggedIn) { %>
+          <a href="/login"><img class="user" src="/logo/user.svg" alt="User Icon"></a>
+          <% } else { %>
+            <a href="/logout" class="logout fontal">Logout</a>
+          <% } %>
+
+          <div class="menu-icon">&#9776;</div> 
+        </div>
+      </header>
+    </div>
+  </div>
+  <div class="extraPadding"></div>
